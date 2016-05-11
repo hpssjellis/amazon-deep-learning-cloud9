@@ -113,3 +113,7 @@ export PATH=`pwd`/bin:$PATH
 
 
 
+# some examples
+wget https://s3-us-west-2.amazonaws.com/amazon-dsstne-samples/data/ml20m-all
+
+

@@ -9,6 +9,8 @@
 sudo apt-get -y update
 sudo apt-get install gcc
 sudo apt-get install g++
+sudo apt-get install -y  unzip
+sudo apt-get -y install cmake
 
 
 
@@ -28,7 +30,10 @@ cd openmpi-1.8.2
 make
 sudo make install
 
-printf "\n\nPATH=\$PATH:/home/ubuntu/workspace/openmpi"  >> ~/.profile
+cd /home/ubuntu/workspace
+rm openmpi-1.8.2.tar.gz
+
+printf "\n\nPATH=\$PATH:/home/ubuntu/workspace/openmpi/bin"  >> ~/.profile
 
 
 
@@ -91,7 +96,7 @@ printf "\nPATH=\$PATH:/home/ubuntu/workspace/netcdfcpp"  >> ~/.profile
 #JsonCPP Setup
 cd /home/ubuntu/workspace
 
-sudo apt-get -y install cmake
+#sudo apt-get -y install cmake
 wget https://github.com/open-source-parsers/jsoncpp/archive/svn-import.tar.gz
 tar xvfz svn-import.tar.gz
 cd jsoncpp-svn-import
@@ -102,6 +107,9 @@ make
 sudo make install
 
 
+cd /home/ubuntu/workspace
+rm svn-import.tar.gz
+
 printf "\nPATH=\$PATH:/home/ubuntu/workspace/jsoncpp-svn-import"  >> ~/.profile
 
 
@@ -110,12 +118,14 @@ printf "\nPATH=\$PATH:/home/ubuntu/workspace/jsoncpp-svn-import"  >> ~/.profile
 cd /home/ubuntu/workspace
 
 wget https://github.com/NVlabs/cub/archive/1.5.2.zip
-sudo apt-get install -y  unzip
+#sudo apt-get install -y  unzip
 unzip 1.5.2.zip
-sudo cp -rf cub-1.5.2/cub/ /home/ubuntu/workspace/include/
+sudo cp -rf cub-1.5.2/cub/ /home/ubuntu/workspace/cub-1.5.2
 
+cd /home/ubuntu/workspace
+rm 1.5.2.zip
 
-printf "\nPATH=\$PATH:/home/ubuntu/workspace/include"  >> ~/.profile
+printf "\nPATH=\$PATH:/home/ubuntu/workspace/cub-1.5.2"  >> ~/.profile
 
 
 
@@ -128,8 +138,14 @@ cd amazon-dsstne/src/amazon/dsstne
 export PATH=/home/ubuntu/workspace/openmpi/bin:/home/ubuntu/workspace/cuda/bin:$PATH
 make
 
+
+
+
+
+
+
 printf "\nPATH=\$PATH:/home/ubuntu/workspace/amazon-dsstne/src/amazon/dsstne"  >> ~/.profile
-printf "\nPATH=\$PATH:/home/ubuntu/workspace/openmpi/bin"  >> ~/.profile
+#printf "\nPATH=\$PATH:/home/ubuntu/workspace/openmpi/bin"  >> ~/.profile
 printf "\nPATH=\$PATH:/home/ubuntu/workspace/cuda/bin"  >> ~/.profile
 
 

@@ -18,11 +18,14 @@ sudo apt-get -y install cmake
 
 
 # Install Cuda
-wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.0-28_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu1404_7.0-28_amd64.deb
+#wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.0-28_amd64.deb
+
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.5-18_amd64.deb
+
+sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
 sudo apt-get update
 sudo apt-get -y install cuda
-rm cuda-repo-ubuntu1404_7.0-28_amd64.deb
+rm cuda-repo-ubuntu1404_7.5-18_amd64.deb
 #check everything ok
 /usr/local/cuda/bin/nvcc --version
 #> Cuda compilation tools, release 7.0, V7.0.27

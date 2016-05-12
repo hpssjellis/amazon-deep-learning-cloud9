@@ -5,16 +5,38 @@
 
 #Cuda install
 
-sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_ppc64el.deb
-sudo apt-get -y update
-sudo apt-get install cuda
+#sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_ppc64el.deb
+#sudo apt-get -y update
+#sudo apt-get install cuda
 
 # GCC Setup
-
+sudo apt-get -y update
 sudo apt-get install gcc
 sudo apt-get install g++
 sudo apt-get install -y  unzip
 sudo apt-get -y install cmake
+
+
+# Install Cuda
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/cuda-repo-ubuntu1404_7.0-28_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1404_7.0-28_amd64.deb
+sudo apt-get update
+sudo apt-get -y install cuda
+rm cuda-repo-ubuntu1404_7.0-28_amd64.deb
+#check everything ok
+/usr/local/cuda/bin/nvcc --version
+#> Cuda compilation tools, release 7.0, V7.0.27
+
+# Install Cudnn
+wget https://s3-eu-west-1.amazonaws.com/christopherbourez/public/cudnn-6.5-linux-x64-v2.tgz
+tar cudnn-6.5-linux-x64-v2.tgz
+rm xvzf cudnn-6.5-linux-x64-v2.tgz
+sudo cp cudnn-6.5-linux-x64-v2/cudnn.h /home/ubuntu/workspace/cuda-7.5/include/
+sudo cp cudnn-6.5-linux-x64-v2/libcudnn* /home/ubuntu/workspace/cuda-7.5/lib64/
+
+
+
+
 
 
 #install cudnn

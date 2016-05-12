@@ -3,15 +3,31 @@
 #  only need to run this script with the command (do not type the #)
 #  bash setup.sh
 
+#Cuda install
 
+sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_ppc64el.deb
+sudo apt-get -y update
+sudo apt-get install cuda
 
 # GCC Setup
-sudo apt-get -y update
+
 sudo apt-get install gcc
 sudo apt-get install g++
 sudo apt-get install -y  unzip
 sudo apt-get -y install cmake
 
+
+#install cudnn
+cd /home/ubuntu/workspace
+
+#wget ???
+#tar xvzf cudnn-7.5-linux-x64-v4.tgz
+#sudo cp cudnn-7.5-linux-x64-v4/cudnn.h /home/ubuntu/workspace/cuda/include
+#sudo cp cudnn-7.5-linux-x64-v4/libcudnn* /home/ubuntu/workspace/cuda/lib64
+#sudo chmod a+r /home/ubuntu/workspace/cuda/lib64/libcudnn*
+
+
+#cd /home/ubuntu/workspace
 
 
 
